@@ -1,0 +1,168 @@
+\pgfplotsset{compat=1.18} 
+\usepackage{fontawesome}
+%background color
+\definecolor{bgcol}{RGB}{190,220,255}
+
+\usepackage{pifont}
+\usepackage{amssymb}
+%textcolor
+\definecolor{textcol}{RGB}{0,50,80}
+\definecolor{maincol}{RGB}{255,150,0}
+%sectioncolor
+\definecolor{sectcol}{RGB}{255,255,255}
+\definecolor{thirdcol}{RGB}{0,80,130}
+
+% Abhi-1U : TcolorBoxes components
+\usepackage[most]{tcolorbox}
+\newtcolorbox{Block}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=1pt, % no real frame,
+  fonttitle={\large \bfseries},
+  skin=bicolor,
+  colbacklower=white!86!black,
+  collower=RESTblue,
+  coltitle={white},  % Black colour for title
+  title={#1 },% Fixed title,
+  lifted shadow={1mm}{-2mm}{3mm}{0.1mm}%
+  {black!50!white},
+  colframe=RESTblue,
+  halign lower=flush right
+ %attach title to upper, % Move the title into the box
+}
+\definecolor{WarningYellow}{RGB}{255,211,0}
+%\definecolor{DarkerYellow}{RGB}{255,215,0}
+\definecolor{WarningRed}{RGB}{207,20,43}
+\definecolor{ElectricRed}{RGB}{230,0,0}
+\definecolor{SuccessGreen}{RGB}{0,173,67}
+\definecolor{ElectricViolet}{RGB}{89,0,204}
+\definecolor{BrightViolet}{RGB}{106,27,219}
+\definecolor{Teal}{RGB}{0,128,128}
+\newtcolorbox{Warning}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=1pt, % no real frame,
+  fonttitle={\color{black}\large \bfseries},
+  skin=bicolor,
+  colbacklower=black!86!white,
+  collower=WarningYellow,
+  coltitle={white},  % Black colour for title
+  title={#1 },% Fixed title,
+  lifted shadow={1mm}{-2mm}{3mm}{0.1mm}%
+  {black!50!white},
+  colframe=WarningYellow,
+  halign lower=flush right
+ %attach title to upper, % Move the title into the box
+}
+\newtcolorbox{Error}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=1pt, % no real frame,
+  fonttitle={\large \bfseries},
+  skin=bicolor,
+  colbacklower=black!86!white,
+  collower=ElectricRed,
+  coltitle={white},  % Black colour for title
+  title={#1 },% Fixed title,
+  lifted shadow={1mm}{-2mm}{3mm}{0.1mm}%
+  {black!50!white},
+  colframe=ElectricRed,
+  halign lower=flush right
+ %attach title to upper, % Move the title into the box
+}
+\newtcolorbox{Abstract}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=1pt, % no real frame,
+  fonttitle={\large \bfseries},
+  skin=bicolor,
+  colbacklower=black!86!white,
+  collower=maincol,
+  coltitle={white},  % Black colour for title
+  title={#1 },% Fixed title,
+  lifted shadow={1mm}{-2mm}{3mm}{0.1mm}%
+  {black!50!white},
+  colframe=maincol,
+  halign lower=flush right
+ %attach title to upper, % Move the title into the box
+}
+
+\newtcolorbox{Success}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=1pt, % no real frame,
+  fonttitle={\large \bfseries},
+  skin=bicolor,
+  colbacklower=black!86!white,
+  collower=SuccessGreen,
+  coltitle={white},  % Black colour for title
+  title={#1 },% Fixed title,
+  lifted shadow={1mm}{-2mm}{3mm}{0.1mm}%
+  {black!50!white},
+  colframe=SuccessGreen,
+  halign lower=flush right
+ %attach title to upper, % Move the title into the box
+}
+\newtcolorbox{Tip}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=1pt, % no real frame,
+  fonttitle={\large \bfseries},
+  skin=bicolor,
+  colbacklower=white!86!black,
+  collower=Teal,
+  coltitle={white},  % Black colour for title
+  title={#1 },% Fixed title,
+  lifted shadow={1mm}{-2mm}{3mm}{0.1mm}%
+  {black!50!white},
+  colframe=Teal,
+  halign lower=flush right
+ %attach title to upper, % Move the title into the box
+}
+\newtcolorbox{Example}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=1pt, % no real frame,
+  fonttitle={\large \bfseries},
+  skin=bicolor,
+  colbacklower=white!86!black,
+  collower=ElectricViolet,
+  coltitle={white},  % Black colour for title
+  title={#1 },% Fixed title,
+  lifted shadow={1mm}{-2mm}{3mm}{0.1mm}%
+  {black!50!white},
+  colframe=ElectricViolet,
+  halign lower=flush right
+ %attach title to upper, % Move the title into the box
+}
+\newtcblisting{code}[2][]{
+    arc=0pt, outer arc=0pt,
+    listing only, 
+    listing style=htmlcssjs,
+    title=\faCode\hspace{0.2cm}#2,
+    colframe=black,
+    #1
+    }
+% Abhi-1U : Fact Bubble
+\newcommand{\factbubble}[5]{
+	\begin{tikzpicture}
+	\pgfmathparse{#2*2}
+	\let\pbxwidth\pgfmathresult
+		\filldraw[fill=#3,draw=none] (0,0) circle (#2 * 1.5);
+		\filldraw[fill=#5,draw=#4, line width=3.5pt] (0,0) circle (#2 * 1.2);
+		\node at (0,0) {
+			\parbox{\pbxwidth cm}{
+				\begin{center}	
+					#1
+				\end{center}
+			}
+		};
+	\end{tikzpicture}
+}

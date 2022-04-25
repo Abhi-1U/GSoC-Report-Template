@@ -2,9 +2,8 @@
 % Using the texMemo package by Rob Oakes
 \documentclass[a4paper,11pt]{texMemo}
 \usepackage[english]{babel}
+\input{memo.sty}
 \usepackage{graphicx, lipsum}
-
-
 %% Edit the header section here. To include your
 %% own logo, upload a file via the files menu.
 \memoto{Mentor/Co-Mentor}
@@ -13,36 +12,10 @@
 \memodate{\today}
 \logotwo{\includegraphics[width=0.5\textwidth]{GSoC-Horizontal.png}}
 \logo{\includegraphics[width=0.2\textwidth]{Rlogo.png}}
-%background color
-\definecolor{bgcol}{RGB}{190,220,255}
 
-\usepackage{pifont}
-\usepackage{amssymb}
-%textcolor
-\definecolor{textcol}{RGB}{0,50,80}
-\definecolor{maincol}{RGB}{255,150,0}
-%sectioncolor
-\definecolor{sectcol}{RGB}{255,255,255}
-\definecolor{thirdcol}{RGB}{0,80,130}
-
-% Abhi-1U : Fact Bubble
-\newcommand{\factbubble}[5]{
-	\begin{tikzpicture}
-	\pgfmathparse{#2*2}
-	\let\pbxwidth\pgfmathresult
-		\filldraw[fill=#3,draw=none] (0,0) circle (#2 * 1.5);
-		\filldraw[fill=#5,draw=#4, line width=3.5pt] (0,0) circle (#2 * 1.2);
-		\node at (0,0) {
-			\parbox{\pbxwidth cm}{
-				\begin{center}	
-					#1
-				\end{center}
-			}
-		};
-	\end{tikzpicture}
-}
 \begin{document}
 \maketitle
+
 \hspace{-20pt}
  \textbf{\Large \textcolor{thirdcol}{Fortnightly Summary for}} \textbf{\Large \textcolor{maincol}{ June 13 - June 30}}\\
 {\\\vspace{10pt}
@@ -68,7 +41,7 @@
 		\hspace{4pt}
 			\parbox[c][3cm][c]{0.25\textwidth}{
 			\begin{center}
-			\factbubble{\huge{\textcolor{sectcol}{\textbf{10}}}\\\small{\textcolor{sectcol}{\textbf{Hrs of work}}}}{1}{maincol}{sectcol}{thirdcol}\\
+			\factbubble{\huge{\textcolor{sectcol}{\textbf{20\%}}}\\\small{\textcolor{sectcol}{\textbf{work done}}}}{1}{maincol}{sectcol}{thirdcol}\\
 			\end{center}
 		}
 	}\\\vspace{10pt}
@@ -77,14 +50,27 @@
 \hspace{-20pt}
 \textbf{\Large \textcolor{thirdcol}{Status of Tasks  for}} \textbf{\Large \textcolor{maincol}{ June 13 - June 30}}\\
 \begin{itemize}
-\item[$\square$]
-Pilot test run of the existing code
-\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$]
-failed
-\item[\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$]
-checked
+\item[{\color{maincol}$\bigcirc$}]
+TO-DO
+\item[{\color{thirdcol}\rlap{\raisebox{0.2ex}{\hspace{0.6ex}\tiny \ding{52}}}}{\color{maincol}$\bigcirc$}]
+Done
+\item[{\color{thirdcol}\rlap{\raisebox{0.05ex}{\hspace{0.55ex}\scriptsize \ding{56}}}}{\color{maincol}$\bigcirc$}]
+Task Failed Successfully
 \end{itemize}
 \decorativeline\bigskip{}
+\begin{Abstract}[Questions]
+\begin{enumerate}
+    \item \textbf{Operation Category :} File System
+    \item \textbf{Description :} Working Directory changed.
+    \item \textbf{Method :} POST,GET,PATCH,PUT
+    \item \textbf{Output Type :} JSON Text,No Body (Depends on Method)
+\end{enumerate}
+    \tcblower
+        \textbf{Success \faCheckCircle}
+\end{Abstract}
+
+\decorativeline\bigskip{}
+
 %% Write your memo text here, and delete \lipsum
 %% to remove the placeholder text.
 \lipsum
