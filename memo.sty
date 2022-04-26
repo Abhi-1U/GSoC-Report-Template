@@ -39,6 +39,19 @@
 \definecolor{ElectricViolet}{RGB}{89,0,204}
 \definecolor{BrightViolet}{RGB}{106,27,219}
 \definecolor{Teal}{RGB}{0,128,128}
+
+\newtcolorbox{Note}[1][]{%
+  enhanced jigsaw, % better frame drawing
+  borderline west={2pt}{0pt}{thirdcol}, % straight vertical line at the left edge
+  sharp corners, % No rounded corners
+  boxrule=0pt, % no real frame,
+  fonttitle={\large\bfseries},
+  coltitle={black},  % Black colour for title
+  title={ },  % Fixed title,
+  attach title to upper, % Move the title into the box
+  #1
+}
+
 \newtcolorbox{Warning}[1][]{%
   enhanced jigsaw, % better frame drawing
   %borderline west={1pt}{0pt}{REST}, % straight vertical line at the left edge
